@@ -20,10 +20,10 @@ module.exports = {
 				return {
 					pageID: res.id,
 					url: res.url,
-					title: res.properties?.Todo?.title[0]?.plain_text,
-					priority: res.properties?.Priority.select?.name,
+					title: res.properties?.Todo?.title?.[0]?.plain_text,
+					priority: res.properties?.Priority?.select?.name,
 					status: res.properties?.Status?.select?.name,
-					remarks: res.properties?.Remarks?.rich_text[0]?.plain_text,
+					remarks: res.properties?.Remarks?.rich_text?.[0]?.plain_text,
 				};
 			});
 			return { success: true, results };
